@@ -1,0 +1,8 @@
+[out:csv(::id,::lat,::lon,"addr:region","name:en","name:ru","official_status";true;",")][timeout:25];
+area(id:3600060189)->.searchArea;
+(
+  node["place"~"town|city"](area.searchArea);
+);
+out body;
+>;
+out skel qt;
